@@ -26,7 +26,16 @@ def encode(password):
     return encoded_string
 
 def decode(password):
-    pass
+    decoded_string = ""
+
+    for digit in password:
+        temp = int(digit) - 3
+        if temp < 0:
+            temp += 10
+        decoded_string += str(temp)
+    
+    return decoded_string
+
 
 if __name__ == "__main__":
     main()
